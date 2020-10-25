@@ -74,7 +74,7 @@ public class HttpClientModule {
     }
 
     @Provides
-    public TheMovieDbAPI provideFithubApi(@Named("movieDB") Retrofit restAdapter) {
+    public TheMovieDbAPI provideFithubApi(@Named("TVDB") Retrofit restAdapter) {
         return restAdapter.create(TheMovieDbAPI.class);
     }
 
