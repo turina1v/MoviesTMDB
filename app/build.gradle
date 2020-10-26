@@ -13,9 +13,11 @@ repositories {
     flatDir {
         dirs 'libs'
     }
+    mavenCentral()
 }
 
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.getkeepsafe.dexcount'
 apply plugin: 'com.android.application'
 
@@ -115,4 +117,5 @@ dependencies {
     implementation('com.mikepenz:aboutlibraries:5.5.9@aar') {
         transitive = true
     }
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
