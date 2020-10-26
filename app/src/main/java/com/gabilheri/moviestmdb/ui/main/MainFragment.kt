@@ -1,10 +1,10 @@
 package com.gabilheri.moviestmdb.ui.main
 
 import android.os.Bundle
-import android.support.v17.leanback.app.BrowseSupportFragment
-import android.support.v17.leanback.widget.*
-import android.support.v4.content.ContextCompat
 import android.util.SparseArray
+import androidx.core.content.ContextCompat
+import androidx.leanback.app.BrowseSupportFragment
+import androidx.leanback.widget.*
 import com.gabilheri.moviestmdb.App
 import com.gabilheri.moviestmdb.Config
 import com.gabilheri.moviestmdb.R
@@ -34,7 +34,7 @@ class MainFragment : BrowseSupportFragment(), OnItemViewSelectedListener {
     var mRows: SparseArray<MovieRow?>? = null
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        App.Companion.instance()!!.appComponent()!!.inject(this)
+        App.instance()!!.appComponent()!!.inject(this)
 
         // The background manager allows us to manage a dimmed background that does not interfere with the rows
         // It is the preferred way to set the background of a fragment
@@ -178,7 +178,7 @@ class MainFragment : BrowseSupportFragment(), OnItemViewSelectedListener {
         }
     }
 
-    override fun onItemSelected(itemViewHolder: Presenter.ViewHolder, item: Any, rowViewHolder: RowPresenter.ViewHolder, row: Row) {
+    override fun onItemSelected(itemViewHolder: Presenter.ViewHolder?, item: Any?, rowViewHolder: RowPresenter.ViewHolder, row: Row) {
         // Check if the item is a movie
         if (item is Movie) {
             val movie = item

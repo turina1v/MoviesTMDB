@@ -2,6 +2,7 @@ package com.gabilheri.moviestmdb
 
 import android.app.Application
 import com.gabilheri.moviestmdb.dagger.components.ApplicationComponent
+import com.gabilheri.moviestmdb.dagger.components.DaggerApplicationComponent
 import com.gabilheri.moviestmdb.dagger.modules.ApplicationModule
 import com.gabilheri.moviestmdb.dagger.modules.HttpClientModule
 import timber.log.Timber
@@ -24,11 +25,11 @@ class App : Application() {
         }
 
         // Creates Dagger Graph
-        /*mApplicationComponent = DaggerApplicationComponent.builder()
+        mApplicationComponent = DaggerApplicationComponent.builder()
                 .applicationModule(ApplicationModule(this))
                 .httpClientModule(HttpClientModule())
                 .build()
-        mApplicationComponent!!.inject(this)*/
+        mApplicationComponent!!.inject(this)
     }
 
     fun appComponent(): ApplicationComponent? {

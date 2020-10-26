@@ -21,15 +21,16 @@ import java.util.*
  * @since 10/8/16.
  */
 class MovieCardView(context: Context?) : BindableCardView<Movie>(context) {
+    @JvmField
     @BindView(R.id.poster_iv)
     var posterIV: ImageView? = null
 
-    @kotlin.jvm.JvmField
+    @JvmField
     @BindView(R.id.vote_average_tv)
     var mVoteAverageTV: TextView? = null
     public override fun bind(data: Movie) {
         Glide.with(context)
-                .load(HttpClientModule.Companion.POSTER_URL + data.posterPath)
+                .load(HttpClientModule.POSTER_URL + data.posterPath)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(posterIV)
         mVoteAverageTV!!.text = String.format(Locale.getDefault(), "%.2f", data.voteAverage)

@@ -1,7 +1,7 @@
 package com.gabilheri.moviestmdb.ui.movies
 
-import android.support.v17.leanback.widget.Presenter
 import android.view.ViewGroup
+import androidx.leanback.widget.Presenter
 import com.gabilheri.moviestmdb.data.models.Movie
 
 /**

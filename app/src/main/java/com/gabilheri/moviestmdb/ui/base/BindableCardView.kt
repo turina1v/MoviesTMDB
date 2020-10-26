@@ -1,10 +1,10 @@
 package com.gabilheri.moviestmdb.ui.base
 
 import android.content.Context
-import android.support.annotation.LayoutRes
-import android.support.v17.leanback.widget.BaseCardView
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import androidx.annotation.LayoutRes
+import androidx.leanback.widget.BaseCardView
 
 /**
  * Created by [Marcus Gabilheri](mailto:marcus@gabilheri.com)
